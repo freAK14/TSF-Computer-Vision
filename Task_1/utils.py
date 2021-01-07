@@ -30,7 +30,7 @@ def draw_boxes(img_names, boxes_dicts, class_names, model_size):
     for num, img_name, boxes_dict in zip(range(len(img_names)), img_names, boxes_dicts):
         img = Image.open(img_name)
         draw = ImageDraw.Draw(img)
-        font = ImageFont.truetype(font = "./data/fonts/futur.ttf", size = (img.size[0] + img.size[1] // 100))
+        font = ImageFont.truetype(font = "./data/fonts/futur.ttf", size = (img.size[0] + img.size[1]) // 100)
         resize_factor = (img.size[0] / model_size[0], img.size[1] / model_size[1])
         
         for cls in range(len(class_names)):
